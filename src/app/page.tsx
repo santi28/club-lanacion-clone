@@ -8,6 +8,7 @@ import { IconChevronLeft } from "./components/icons/IconChevronLeft";
 import { IconChevronRight } from "./components/icons/IconChevronRight";
 import DiscountSection from "./components/sections/DiscountsSection";
 import VoucherSection from "./components/sections/VoucherSection";
+import { AccountProvider } from "./context/accounts.context";
 
 export default function Home() {
   return (
