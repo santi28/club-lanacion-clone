@@ -27,12 +27,22 @@ export default function CardCarousel({
   const loadPage = async (page: number) => {
     setLoading(true);
     try {
-      // Realizamos la petición desde el cliente
+      const params = new URLSearchParams();
+
+      //  Si hay un tag, lo agregamos a los parámetros
+      if (tag) {
+        params.append("tag", tag);
+      }
+
+      // Si es una lista de vouchers, lo agregamos a los parámetros
+      if (isVoucherList) {
+        params.append("withVoucher", "true");
+      }
+
       const res = await fetch(
-        tag
-          ? `/api/accounts?tag=${tag}&page=${page}` // Si hay un tag, filtramos por tag
-          : `/api/accounts?withVoucher=true&page=${page}` // Si es una lista de vouchers
+        `/api/accounts?${params.toString()}&page=${page}`
       );
+
       const newAccounts = await res.json();
       setAccounts(newAccounts.data); // Reemplazamos las cuentas actuales
       setMeta(newAccounts.metadata); // Actualizamos los metadatos
