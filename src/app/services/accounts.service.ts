@@ -34,13 +34,15 @@ export interface Benefits {
   Classic: number;
 }
 
+const API_URL = process.env.NEXT_PUBLIC_BASE_API_URL || "http://localhost:3000";
+
 export const getAccountsByTag = async (
   tag: string,
   page: number = 1
 ): Promise<AccountsResponse> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?tag=${tag}&page=${page}`
-  );
+  console.log("Fetching accounts to:", API_URL);
+
+  const res = await fetch(`${API_URL}/api/accounts?tag=${tag}&page=${page}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch accounts");
@@ -52,8 +54,10 @@ export const getAccountsByTag = async (
 export const getAccountsWithVoucher = async (
   page: number = 1
 ): Promise<AccountsResponse> => {
+  console.log("Fetching accounts to:", API_URL);
+
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
+    `${API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
   );
 
   if (!res.ok) {
