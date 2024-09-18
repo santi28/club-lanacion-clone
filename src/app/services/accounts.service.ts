@@ -39,7 +39,7 @@ export const getAccountsByTag = async (
   page: number = 1
 ): Promise<AccountsResponse> => {
   const res = await fetch(
-    `${process.env.API_URL}/api/accounts?tag=${tag}&page=${page}`
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?tag=${tag}&page=${page}`
   );
 
   if (!res.ok) {
@@ -53,7 +53,7 @@ export const getAccountsWithVoucher = async (
   page: number = 1
 ): Promise<AccountsResponse> => {
   const res = await fetch(
-    `${process.env.API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
   );
 
   if (!res.ok) {
