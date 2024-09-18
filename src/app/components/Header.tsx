@@ -46,7 +46,7 @@ export default function Header() {
           />
           <button
             aria-label="Buscar"
-            className="h-[38px] w-[38px] flex items-center justify-center text-stone-50 ml-4 bg-sky-600 rounded-full"
+            className="h-[38px] w-[38px] flex items-center justify-center text-stone-50 ml-4 bg-blue-600 rounded-full"
           >
             <MemoizedIconSearch className="w-4 h-4" />
           </button>
