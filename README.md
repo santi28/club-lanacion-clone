@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Club La Nación Clone - Fullstack Exercise
 
-## Getting Started
+Este proyecto es una implementación del ejercicio solicitado para la posición Fullstack en **La Nación**, siguiendo las especificaciones brindadas. La aplicación está construida en **Next.js** y contiene una API simulada a partir de un archivo JSON que proporciona los datos necesarios para alimentar los componentes del frontend.
 
-First, run the development server:
+## 📋 Requerimientos del ejercicio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Los principales objetivos de este ejercicio fueron:
+
+- **Maquetación**: Se realizó a partir del diseño provisto, incluyendo un layout estático que incluye un slider no funcional y un input de búsqueda.
+- **Componentización**: Se crearon componentes reutilizables sin la utilización de librerías de terceros.
+- **Generación de API**: Se generó una API a partir de un archivo JSON que contiene cuentas, sucursales, beneficios, y tags.
+
+### Funcionalidades específicas:
+
+1. **Primer Carrusel (Turismo en Buenos Aires)**:
+
+   - Se filtraron las cuentas con el tag "Turismo" en Buenos Aires.
+   - Se ordenaron las cuentas por la sucursal más cercana.
+   - Se devolvieron las primeras 4 cuentas ordenadas.
+   - Cada tarjeta muestra:
+     - Nombre de la cuenta.
+     - Imagen de la cuenta.
+     - Enlace a la cuenta (ej: https://club.lanacion.com.ar/{CRMID}).
+     - Beneficio más alto.
+     - Distancia a la sucursal más cercana.
+
+2. **Segundo Carrusel (Cuentas con Voucher Activo)**:
+   - Se filtraron las cuentas con el flag `haveVoucher` activo.
+   - Se ordenaron alfabéticamente de forma descendente.
+   - Se devolvieron las primeras 4 cuentas.
+   - Cada tarjeta muestra:
+     - Nombre de la cuenta.
+     - Imagen de la cuenta.
+     - Enlace y botón de Promocode.
+
+## 🚀 Tecnologías utilizadas
+
+- **Next.js** para Server-Side Rendering (SSR).
+- **React** para la construcción de componentes.
+- **Fetch API** con `async/await` para las consultas a la API simulada.
+- **Vercel** como plataforma de despliegue.
+
+## 📁 Estructura del Proyecto
+
+```
+/src
+│
+├── /app
+│   ├── components/   # Componentes reutilizables como tarjetas, carruseles, headers
+│   ├── api/          # API interna del proyecto que sirve datos del JSON
+│   ├── page.tsx      # Página principal
+│   ├── layout.tsx    # Estructura global de la aplicación
+│   └── globals.css   # Estilos globales
+│
+└── /public
+    ├── /images       # Imágenes públicas estáticas
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Instalación y configuración
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clona este repositorio:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/tu-usuario/club-lanacion-clone.git
+   ```
 
-## Learn More
+2. Instala las dependencias:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Inicia el servidor de desarrollo:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   pnpm dev
+   ```
 
-## Deploy on Vercel
+4. Abre el navegador en:
+   ```
+   http://localhost:3000
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌟 Funcionalidades implementadas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Carruseles con paginación**: Se desarrollaron dos carruseles siguiendo los criterios de filtrado y ordenamiento solicitados.
+- **Renderizado de cuentas**: Las tarjetas de cuentas se generan dinámicamente a partir de la API, mostrando información relevante como beneficios, distancias y enlaces.
+- **Estático y funcional**: Se incluyeron componentes como slider e input de búsqueda de manera estática, como se especificó.
