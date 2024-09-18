@@ -8,7 +8,7 @@ export default function VoucherSection() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
             Códigos de descuento
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 max-w-screen-lg">
             ¿Sos socio de Club LA NACION? Descargá tu código y disfrutá
             beneficios exclusivos en tus marcas favoritas
           </p>

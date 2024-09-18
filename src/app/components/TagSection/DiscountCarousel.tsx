@@ -17,13 +17,13 @@ export default function DiscountCarousel({
     <div className="flex items-center gap-4 w-full mx-auto">
       <button
         aria-label="Anterior"
-        className="text-stone-950 hover:bg-stone-100 p-2 rounded-full"
+        className="text-stone-950 hover:bg-stone-100 p-2 rounded-full hidden md:block"
       >
         <IconChevronLeft className="w-6 h-6" />
       </button>
 
       {/* Contenedor de las tarjetas */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-4 flex-1">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 flex-1">
         {content.map((account) => (
           // Simulamos la distancia con un valor aleatorio (0m - 1200m)
           // account.distance = Math.floor(Math.random() * 1200),
@@ -34,7 +34,7 @@ export default function DiscountCarousel({
 
       <button
         aria-label="Siguiente"
-        className="text-stone-950 hover:bg-stone-100 p-2 rounded-full"
+        className="text-stone-950 hover:bg-stone-100 p-2 rounded-full hidden md:block"
       >
         <IconChevronRight className="w-6 h-6" />
       </button>
