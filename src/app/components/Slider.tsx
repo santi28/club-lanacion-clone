@@ -1,7 +1,9 @@
 import Image from "next/image";
-import sliderPicture from "../../../public/slider.jpg";
-import IconChevronLeft from "./icons/IconChevronLeft";
-import IconChevronRight from "./icons/IconChevronRight";
+
+import { IconChevronLeft } from "./icons/IconChevronLeft";
+import { IconChevronRight } from "./icons/IconChevronRight";
+
+import sliderPicture from "../../public/images/slider.jpg";
 
 export default function Slider() {
   return (
