@@ -2,6 +2,13 @@
 
 Este proyecto es una implementación del ejercicio solicitado para la posición Fullstack en **La Nación**, siguiendo las especificaciones brindadas. La aplicación está construida en **Next.js** y contiene una API simulada a partir de un archivo JSON que proporciona los datos necesarios para alimentar los componentes del frontend.
 
+<p align="center">
+   <img src="./src/public/images/preview.jpeg">
+   <a href="https://lanacion-clone.santiagodenicolas.com/">
+      🌎 Live Demo
+   </a>
+</p>
+
 ## 📋 Requerimientos del ejercicio
 
 Los principales objetivos de este ejercicio fueron:
