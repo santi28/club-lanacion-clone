@@ -13,9 +13,6 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "Clone - Club LA NACIÓN",
   description: "Página web clon de Club La Nación",
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({
