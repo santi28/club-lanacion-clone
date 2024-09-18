@@ -1,16 +1,20 @@
-export interface AccountsTagResponse {
-  metadata: {
-    totalAccounts: number;
-    page: number;
-    pageSize: number;
-    totalPages: number;
-  };
-  data: AccountTagResult[];
+export interface AccountsResponse {
+  metadata: Metadata;
+  data: Account[];
 }
 
-export interface AccountTagResult {
+export interface Metadata {
+  totoalResults: number;
+  prevPage: number | null;
+  nextPage: number | null;
+  totalPages: number;
+}
+
+export interface Account {
+  id: string;
   name: string;
   images: Image[];
+  haveVoucher: boolean;
   url: string;
   benefits: Benefits;
   distance: number;
@@ -33,9 +37,9 @@ export interface Benefits {
 export const getAccountsByTag = async (
   tag: string,
   page: number = 1
-): Promise<AccountsTagResponse> => {
+): Promise<AccountsResponse> => {
   const res = await fetch(
-    `${process.env.API_URL}/accounts/tag?q=${tag}&page=${page}`
+    `${process.env.API_URL}/api/accounts?tag=${tag}&page=${page}`
   );
 
   if (!res.ok) {
@@ -45,3 +49,16 @@ export const getAccountsByTag = async (
   return res.json();
 };
 
+export const getAccountsWithVoucher = async (
+  page: number = 1
+): Promise<AccountsResponse> => {
+  const res = await fetch(
+    `${process.env.API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch accounts");
+  }
+
+  return res.json();
+};
