@@ -38,6 +38,10 @@ export const getAccountsByTag = async (
   tag: string,
   page: number = 1
 ): Promise<AccountsResponse> => {
+  if (!process.env.NEXT_PUBLIC_BASE_API_URL) {
+    throw new Error("Missing configuration");
+  }
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?tag=${tag}&page=${page}`
   );
@@ -52,6 +56,10 @@ export const getAccountsByTag = async (
 export const getAccountsWithVoucher = async (
   page: number = 1
 ): Promise<AccountsResponse> => {
+  if (!process.env.NEXT_PUBLIC_BASE_API_URL) {
+    throw new Error("Missing configuration");
+  }
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/accounts?withVoucher=true&page=${page}&orderBy=name`
   );
