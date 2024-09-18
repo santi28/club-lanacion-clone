@@ -17,7 +17,11 @@ export default function Home() {
     );
   }
 
-  return <h1 className="text-4xl text-center mt-20">Hello World</h1>;
+  return (
+    <h1 className="text-4xl text-center mt-20">
+      Hello World {process.env.NEXT_PUBLIC_BASE_API_URL}
+    </h1>
+  );
 
   // return (
   //   <>
