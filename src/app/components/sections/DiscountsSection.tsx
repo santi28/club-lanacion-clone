@@ -1,6 +1,11 @@
 import { CardCarousel } from "@/app/page";
+import { getAccountsByTag } from "@/app/services/accounts.service";
+import DiscountCarousel from "../DiscountCarousel";
 
-export default function DiscountSection() {
+export default async function DiscountSection() {
+  const accountsWithTag = await getAccountsByTag("Turismo en Buenos Aires");
+  console.log(accountsWithTag);
+
   return (
     <section className="mx-auto py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-12 items-center">
       <header className="flex justify-between items-center mb-6">
@@ -14,7 +19,7 @@ export default function DiscountSection() {
         </button>
       </header>
 
-      <CardCarousel />
+      <DiscountCarousel content={accountsWithTag.data} />
     </section>
   );
 }

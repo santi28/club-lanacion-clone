@@ -1,3 +1,13 @@
+export interface AccountsTagResponse {
+  metadata: {
+    totalAccounts: number;
+    page: number;
+    pageSize: number;
+    totalPages: number;
+  };
+  data: AccountTagResult[];
+}
+
 export interface AccountTagResult {
   name: string;
   images: Image[];
@@ -23,9 +33,9 @@ export interface Benefits {
 export const getAccountsByTag = async (
   tag: string,
   page: number = 1
-): Promise<AccountTagResult[]> => {
+): Promise<AccountsTagResponse> => {
   const res = await fetch(
-    `https://api.example.com/accounts/tag?q=${tag}&page=${page}`
+    `${process.env.API_URL}/accounts/tag?q=${tag}&page=${page}`
   );
 
   if (!res.ok) {

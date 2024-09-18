@@ -51,34 +51,6 @@ export function CardCarousel() {
   );
 }
 
-export function DiscountBenefitCard() {
-  return (
-    <article className="flex flex-col min-w-[200px] max-w-[250px] flex-grow border border-stone-300 rounded-lg overflow-hidden shadow-sm font-sans">
-      <Image
-        src={photo}
-        alt="Imagen de descuento"
-        width={500}
-        height={300}
-        className="object-cover w-full"
-      />
-      <div className="p-4 flex flex-col gap-3">
-        <h3 className="text-lg font-bold text-gray-800">COTO</h3>
-        <div className="flex flex-row items-center gap-2">
-          <span className="text-blue-950 font-black">20%</span>
-          <span className="text-blue-700 font-black">15%</span>
-          <span className="text-blue-500 font-black">10%</span>
-        </div>
-        <div className="flex items-center text-gray-600 text-sm">
-          <IconMapPin className="w-4 h-4 inline-block mr-1" />
-          <span>
-            A <strong>0,5km</strong>
-          </span>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export function VoucherBenefitCard() {
   return (
     <article className="flex flex-col flex-grow border border-stone-300 rounded-lg overflow-hidden shadow-sm font-sans">
