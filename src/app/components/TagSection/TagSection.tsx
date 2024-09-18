@@ -1,6 +1,6 @@
 import { CardCarousel } from "@/app/page";
 import { getAccountsByTag } from "@/app/services/accounts.service";
-import DiscountCarousel from "../DiscountCarousel";
+import DiscountCarousel from "./DiscountCarousel";
 
 export default async function DiscountSection() {
   const accountsWithTag = await getAccountsByTag("Turismo en Buenos Aires");

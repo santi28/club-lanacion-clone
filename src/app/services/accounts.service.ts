@@ -44,3 +44,4 @@ export const getAccountsByTag = async (
 
   return res.json();
 };
+

@@ -6,7 +6,7 @@ import photo from "../public/images/slider.jpg";
 import { IconMapPin } from "./components/icons/IconMapPin";
 import { IconChevronLeft } from "./components/icons/IconChevronLeft";
 import { IconChevronRight } from "./components/icons/IconChevronRight";
-import DiscountSection from "./components/sections/DiscountsSection";
+import DiscountSection from "./components/TagSection/TagSection";
 import VoucherSection from "./components/sections/VoucherSection";
 import { AccountProvider } from "./context/accounts.context";
 
