@@ -1,7 +1,4 @@
-import {
-  getAccountsByTag,
-  getAccountsWithVoucher,
-} from "@/app/services/accounts.service";
+import { getAccountsWithVoucher } from "@/app/services/accounts.service";
 import CardCarousel from "./CardCarousel";
 
 export default async function DiscountSection() {

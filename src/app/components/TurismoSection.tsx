@@ -1,3 +1,5 @@
+"use server";
+
 import { getAccountsByTag } from "@/app/services/accounts.service";
 import CardCarousel from "./CardCarousel";
 
@@ -20,6 +22,7 @@ export default async function DiscountSection() {
       <CardCarousel
         initialAccounts={fetchedAccounts.data}
         initialMeta={fetchedAccounts.metadata}
+        tag="Turismo en Buenos Aires"
       />
     </section>
   );
